@@ -2,10 +2,10 @@
 {% extends 'books/base.html' %}
 
 {% block body %}
-
+<h1>hi</h1>
 <ul>
-{% for i in object_list %}
-<li><a href="{% url 'books:detail' i.id %}">{{i.name}}</a></li>
+{% for i in books %}
+<li><a href="{% url 'books:detail' i.pk %}">{{i.name}}</a></li>
     <img src="{{i.image}}">
 {% endfor  %}
 </ul>

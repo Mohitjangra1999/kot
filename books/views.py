@@ -4,16 +4,18 @@ from django.views import generic
 from django.views.generic.edit import CreateView
 
 class IndexView(generic.ListView):
+    queryset = Book.objects.all()
+    context_object_name = 'books'
     template_name = 'books/index.html'
-
-    def get_queryset(self):
-        return Book.objects.all()
+   # paginate_by = 2
 
 class BookCreate(CreateView):
     model = Book
     fields = ['name', 'author', 'price', 'type', 'image']
+    template_name = 'books/book_creation_form_s.html'
 
 class DetailView(generic.DetailView):
-    template_name = 'books/details.html'
     model = Book
+    template_name = 'books/details.html'
+
 
