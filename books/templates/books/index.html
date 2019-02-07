@@ -1,13 +1,35 @@
 
 {% extends 'books/base.html' %}
-
 {% block body %}
-<h1>hi</h1>
+<link rel="stylesheet" type="text/css" href="books/style.css">
+<div class=" col-md-12 jumbotron">
+  <h1>The Bookstore</h1>
+  <p>Collection of all popular books</p>
+</div>
+<div class=" col-md-10 jumbotron jumbotron-special" name="fig">
+   <div class="col-md-12 span-2">
+  <h2>Popular Books</h2>
+
+  </div>
+</div>
 <ul>
 {% for i in books %}
-<li><a href="{% url 'books:detail' i.pk %}">{{i.name}}</a></li>
-    <img src="{{i.image}}">
+<div class="thumbnail">
+    <div class="col-lg-3 col-md-4 col-sm-6 " >
+        <img src="{{i.image}}">
+        <h1 class = "caption"></h1>
+          <h2>{{i.name}}</h2> <h3>{{i.author}}</h3>
+          <p>
+             <a href = "{% url 'books:detail' i.id %}" class = "btn btn-primary" role = "button">
+                Details
+              </a>
+              <a href = "{% url 'books:book_delete' i.id %}" class = "btn btn-danger" role = "button">
+                 Delete
+              </a>
+         </p>
+   </div>
+    </div>
 {% endfor  %}
 </ul>
-
 {% endblock %}
+
