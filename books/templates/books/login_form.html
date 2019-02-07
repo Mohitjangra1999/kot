@@ -1,13 +1,12 @@
-
-{% extends 'books/base.html' %}
-{% block body %}
-    <div class="container-fluid">
+<div style="margin-left:4%">
+<h1>Login</h1>
+    <div class="container">
    <div class="row">
       <div class="col-sm-12 col-md-7">
          <div class="panel panel-default">
             <div class="panel-body">
 
-                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{% url 'books:login_check' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% include 'books/form-template.html' %}
                         <div class="form-group">
@@ -21,4 +20,4 @@
       </div>
    </div>
 </div>
-{% endblock %}
+</div>
