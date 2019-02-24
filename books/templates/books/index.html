@@ -2,23 +2,22 @@
 {% extends 'books/base.html' %}
 {% block body %}
 <link rel="stylesheet" type="text/css" href="books/style.css">
-<div class=" col-md-12 jumbotron">
-  <h1>The Bookstore</h1>
-  <p>Collection of all popular books</p>
+<div class=" col-md-12 jumbotron" id="id1">
+  <h1>My Bookstore</h1>
+  <p>Collection of all personal online books</p>
 </div>
-<div class=" col-md-10 jumbotron jumbotron-special" name="fig">
+<div class=" col-md-11 jumbotron jumbotron-special" id="id2" style="position:relative;">
    <div class="col-md-12 span-2">
-  <h2>Popular Books</h2>
-
+  <h2>My Books</h2>
   </div>
 </div>
+
 <ul>
 {% for i in books %}
-<div class="thumbnail">
-    <div class="col-lg-3 col-md-4 col-sm-6 " >
-        <img src="{{i.image}}">
-        <h1 class = "caption"></h1>
-          <h2>{{i.name}}</h2> <h3>{{i.author}}</h3>
+    <div class="col-lg-3 col-md-4 col-sm-6" id="i" style="margin-top:20px;" >
+        <img src="{{i.image}}" height="200px" width="150px">
+          <h2>{{i.name}}</h2>
+          <h4>Author: {{i.author}}</h4>
           <p>
              <a href = "{% url 'books:detail' i.id %}" class = "btn btn-primary" role = "button">
                 Details
@@ -28,8 +27,43 @@
               </a>
          </p>
    </div>
-    </div>
 {% endfor  %}
 </ul>
-{% endblock %}
+
+<footer class="panel-footer" style="background-color:black;color:white;
+margin-top:130%;">
+    <div class="container" >
+    <div class="row">
+        <section class="col-sm-4" id="other_lib_info">
+            <span>Other Library Service</span><br>
+            <ul>
+                <li>Corporate library </li>
+                <li>School library</li>
+                <li>Hotel Library Service</li>
+            </ul>
+            <hr class="visible-xs">
+        </section>
+        <section class="col-sm-4" id="custo_serv">
+            <span>Customer Service Information</span><br>
+            <ul>
+                <li>E:99mjkohiiie@gmail.com</li>
+                <li>T:98776876876,98767676879</li>
+                <li>PH:876765879,86787980779</li>
+            </ul>
+            <hr class="visible-xs">
+        </section>
+        <section class="col-sm-4" id="custo_serv">
+            <span>Other Information</span>
+            <ul>
+                <li>Privacy Policy</li>
+                <li>About Us</li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </section>
+     </div>
+        <div class="text-center" style="margin-right:10%;">&copy; Copyright: Mohit Jangra's Online Library</div>
+    </div>
+</footer>
+{% endblock  %}
+
 

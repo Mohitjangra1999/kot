@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class Book(models.Model):
@@ -15,3 +15,4 @@ class Book(models.Model):
     price = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     image = models.CharField(max_length=1000000000000000000)
+    pdf = models.FileField(upload_to='books_pdf/', default='books_pdf/None.pdf')

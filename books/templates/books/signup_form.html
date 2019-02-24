@@ -1,5 +1,8 @@
-<div style="margin-left:4%">
-<h1>SignUp</h1>
+<style>
+    body{background-color:#76b852}
+</style>
+<div style="margin-left:40%;margin-top:7%">
+<h1 style="margin-left:30px">SignUp</h1>
     <div class="container">
    <div class="row">
       <div class="col-sm-12 col-md-7">
@@ -10,6 +13,7 @@
                         {% csrf_token %}
                         {% include 'books/form-template.html' %}
                         <div class="form-group">
+                            <br>
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>

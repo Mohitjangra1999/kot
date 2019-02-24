@@ -6,44 +6,80 @@
     <meta charset="UTF-8">
     <title>Mysite</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="static/books/style.css">
+    <style>
+       #id1{
+       background-color:yellow;}
+       #id2{
+       background-color:orange;
+       margin-bottom:30px;
+       }
+       #name1{
+    color:#00bfff;
+       }
+#name2{
+    color:white;
+}
+.navbar-brand{ font-size:250%;
+}
+
+.panel-footer{
+    padding-top: 35px;padding-bottom: 30px;background-color: black;border-top:0;
+}
+.panel-footer div.row{
+    margin-bottom: 35px;
+}
+#other_lib_info > span,#custo_serv > span,#Info>span{
+    font-size:1.4em;
+}
+    </style>
 </head>
 <body >
-<nav class ="navbar navbar-inverse ">
-    <div class ="container-fluid">
-        <a class="navbar-brand" href="{% url  'books:index' %}">My Personal BookStore</a>
-
-        <div class="collapse navbar-collapse">
-
-            <ul class="nav navbar-nav navbar-right">
-            <li class="">
-                <a href="{% url 'books:book_add' %}">
-                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Add Book
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'books:log_out' %}">
-                    <span class="glyphicon glyphicon-log-out"></span>&nbsp;Log Out
-                </a>
-            </li>
-        </ul>
-
-               <ul class="nav navbar-nav navbar-right">
-            <li class="">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <span><a class="navbar-brand" id="name_link" href="{% url 'books:index' %}">
+            <span id="name1">Online&nbsp;</span><span id="name2">Library</span></a></span>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li>
                 <a href="{% url 'books:index' %}">
                     <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Books
                 </a>
-            </li>
-        </ul>
-       </div>
-    </div>
-</nav>
+          </li>
+          <li>
+                <a href="{% url 'books:book_add' %}">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Add Book
+                </a>
+          </li>
+          <li>
+                <a href="{% url 'books:search_book' %}">
+                    <span class="glyphicon glyphicon-search"></span>&nbsp;Search Book
+                </a>
+           </li>
+           <li>
+                <a href="{% url 'books:log_out' %}">
+                    <span class="glyphicon glyphicon-log-out"></span>&nbsp;Log Out
+                </a>
+           </li>
 
+      </ul>
+    </div>
+  </div>
+</nav>
    {% block body %}
+
    {% endblock %}
 
 </body>
+
 </html>

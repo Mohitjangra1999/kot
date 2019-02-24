@@ -1,0 +1,14 @@
+{% extends 'books/base.html' %}
+
+{% block body %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+
+  <ul>
+  {% for book in filter.qs %}
+      <li><a href="{% url 'books:detail' book.id %}">{{ book.name }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
