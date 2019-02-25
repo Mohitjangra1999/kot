@@ -10,7 +10,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic import  View
 from .forms import UserForm
 from django.contrib.auth.models import User
-from .filters import BookFilter, UserFilter
+#from .filters import BookFilter, UserFilter
 
 from django.http import HttpResponse
 from django.http import FileResponse, Http404
@@ -107,6 +107,7 @@ class read_book(DetailView):
     template_name = 'books/read_book_temp.html'
 
 # not using in website , but can be checked by  /search_user/
+'''
 def SearchUser(request):
     user_list = User.objects.all()
     user_filter = UserFilter(request.GET, queryset=user_list)
@@ -117,3 +118,4 @@ def  SearchBook(request):
     book_list = Book.objects.all()
     book_filter = BookFilter(request.GET, queryset=book_list)
     return render(request, 'books/book_list.html', {'filter': book_filter})
+    '''
