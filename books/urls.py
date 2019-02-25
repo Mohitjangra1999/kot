@@ -15,8 +15,6 @@ urlpatterns = [
     url(r'^(?P<pk>[0-9]+)/delete/$', views.BookDelete.as_view(), name='book_delete'),
     url(r'^delete/success_page/$', views.Delete_Success_page.as_view(), name='delete_success'),
     url(r'^(?P<pk>[0-9]+)/read/$', views.read_book.as_view(), name='read'),
-
+    url(r'^search_user/$', views.SearchUser, name='search_user'),
+    url(r'^search_book/$', views.SearchBook, name='search_book'),
 ]
-
-'''   url(r'^search_user/$', views.SearchUser, name='search_user'),
-   url(r'^search_book/$', views.SearchBook, name='search_book'), '''
